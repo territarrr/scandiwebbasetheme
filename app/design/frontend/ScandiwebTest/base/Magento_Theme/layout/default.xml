@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Magento_Theme::css/styles.css" />
+    </head>
+    <body>
+        <referenceBlock name="logo">
+            <arguments>
+                <argument name="logo_file" xsi:type="string">images/my-logo.svg</argument>
+            </arguments>
+        </referenceBlock>
+
+        <referenceContainer name="header.container">
+            <container name="header.banner.container" htmlTag="div" htmlClass="header-banner"
+                before="-">
+                <block class="Magento\Framework\View\Element\Template" name="header.banner.block"
+                    template="Magento_Theme::banner.phtml" ifconfig="carriers/freeshipping/active" />
+            </container>
+        </referenceContainer>
+
+        <block class="Magento\Newsletter\Block\Subscribe" name="form.subscribe"
+            template="Magento_Theme::subscribe.phtml" />
+        <move element="form.subscribe" destination="page.wrapper" before="footer" />
+
+    </body>
+</page>
