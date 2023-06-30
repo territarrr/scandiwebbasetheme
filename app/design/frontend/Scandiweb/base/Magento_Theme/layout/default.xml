@@ -19,8 +19,6 @@
             </container>
         </referenceContainer>
 
-        <block class="Magento\Newsletter\Block\Subscribe" name="form.subscribe"
-            template="Magento_Theme::subscribe.phtml" />
         <move element="form.subscribe" destination="page.wrapper" before="footer" />
     </body>
 </page>
